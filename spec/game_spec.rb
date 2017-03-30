@@ -20,11 +20,10 @@ describe Game do
 
   describe "#switch_player" do
     it "switches turns" do
-      # allow(game).to receive(:players).and_return({player1: player1, player2: player2})
-      # game.aggro_player = game.players[:player1]
       game.switch_player
-      expect(game.aggro_player).to eq (game.players[:player2])
-
+      game.switch_player
+      game.switch_player
+      expect(game.aggro_player).to eq player1
     end
   end
 end
