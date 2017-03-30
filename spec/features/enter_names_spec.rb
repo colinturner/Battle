@@ -17,4 +17,9 @@ feature "Enter names" do
     sign_in_and_play
     expect(page).to have_css("progress#health_bar_p2")
   end
+
+  scenario "chooses a player to start first attack" do
+    sign_in_and_play
+    expect(page).to have_content("Volkswagen's turn to attack")
+  end
 end

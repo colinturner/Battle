@@ -7,8 +7,23 @@ feature 'attack player' do
 
   scenario 'reduce Player 2 HP by 10' do
     sign_in_and_play
-    click_link 'Cheat emissions test!'
+    click_link "Cheat emissions test!"
     expect(page).not_to have_content 'Polar Bear: 100HP'
     expect(page).to have_content 'Polar Bear: 90 HP'
   end
+
+  scenario 'switch attacking player' do
+    sign_in_and_play
+    click_link "Cheat emissions test!"
+    click_link 'Return to battlefield'
+    expect(page).to have_content "Polar Bear's turn to attack"
+  end
+
+  scenario "return to play page from attack page" do
+    sign_in_and_play
+    click_link "Cheat emissions test!"
+    click_link 'Return to battlefield'
+    expect(page).to have_content "turn to attack"
+  end
+
 end

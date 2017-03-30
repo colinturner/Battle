@@ -17,4 +17,10 @@ describe Game do
       expect(game.players).to eq ({player1: player1, player2: player2})
     end
   end
+
+  describe "#switch_player" do
+    it "switches turns" do
+      expect(game.turn).to be_even
+    end
+  end
 end

@@ -30,6 +30,7 @@ class Battle < Sinatra::Base
   get '/attack' do
     $game.attack($game.players[:player2])
     erb :attack
+    $game.turn += 1
   end
 
   run! if app_file == $0
