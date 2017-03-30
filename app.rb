@@ -22,6 +22,7 @@ class Battle < Sinatra::Base
   end
 
   get '/play' do
+    $game.switch_player
     # $p1_health = 100
     # $p2_health = 100
     erb(:play)
@@ -30,7 +31,8 @@ class Battle < Sinatra::Base
   get '/attack' do
     $game.attack($game.players[:player2])
     erb :attack
-    $game.turn += 1
+
+    #$game.turn += 1
   end
 
   run! if app_file == $0

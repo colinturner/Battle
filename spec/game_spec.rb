@@ -20,7 +20,10 @@ describe Game do
 
   describe "#switch_player" do
     it "switches turns" do
-      expect(game.turn).to be_even
+      allow(game).to receive(:players).and_return({player1: player1, player2: player2})
+      game.aggro_player = game.players[:player1]
+      game.switch_player
+      expect(game.aggro_player).to eq game.players[:player2]
     end
   end
 end
