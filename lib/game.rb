@@ -15,7 +15,7 @@ class Game  # attacks other players
   end
 
   def switch_player
-    @turn.even? ? self.injured_player = players[:player2] : self.injured_player = players[:player1]
+    @turn.even? ? self.injured_player = players[:player1] : self.injured_player = players[:player2]
     @turn.odd? ? self.aggro_player = players[:player1] : self.aggro_player = players[:player2]
     @turn += 1
   end

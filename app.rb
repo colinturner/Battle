@@ -29,7 +29,7 @@ class Battle < Sinatra::Base
   end
 
   get '/attack' do
-    $game.attack($game.players[:player2])
+    $game.attack($game.injured_player)
     erb :attack
 
     #$game.turn += 1
