@@ -20,12 +20,12 @@
 </style>
 
 
-<h1> <%= $player1.name %> vs <%= $player2.name %> BATTLE BEGINS!!!</h1>
+<h1> <%= $game.players[:player1].name %> vs <%= $game.players[:player2].name %> BATTLE BEGINS!!!</h1>
 
 
 <section width="100%">
   <div id="player1">
-    <span id="p1_status"><%= $player1.name %>: <%=$player1.hp%>HP</span>
+    <span id="p1_status"><%= $game.players[:player1].name %>: <%=$game.players[:player1].hp%>HP</span>
     <progress id='health_bar_p1' value='100' max='100'></progress>
     <div></div>
     <img src="http://blog.caranddriver.com/wp-content/uploads/2015/10/Volkswagen-HQ-clouds-e1446151067853-626x381.jpg" alt="gas" height="330" width="400"/>
@@ -34,7 +34,7 @@
   </div>
 
   <div id="player2">
-    <span><%= $player2.name %>: <%=$player2.hp%>HP</span>
+    <span><%= $game.players[:player2].name %>: <%=$game.players[:player2].hp%>HP</span>
     <progress id='health_bar_p2' value='100' max='100'></progress>
     <div></div>
     <img src="https://i0.wp.com/hennessysview.com/wp-content/uploads/2015/12/polar-bear-iceberg.jpg?ssl=1" alt="polar bear" height="350"/>
