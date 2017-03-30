@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require 'shotgun'
 require './lib/player'
+require './lib/game'
 
 class Battle < Sinatra::Base
 
@@ -26,7 +27,7 @@ class Battle < Sinatra::Base
   end
 
   get '/attack' do
-    $player1.attack($player2)
+    Game.new.attack($player2)
     erb :attack
   end
 
