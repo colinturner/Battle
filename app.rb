@@ -20,12 +20,13 @@ class Battle < Sinatra::Base
   end
 
   get '/play' do
-    $p1_health = 100
-    $p2_health = 100
+    # $p1_health = 100
+    # $p2_health = 100
     erb(:play)
   end
 
   get '/attack' do
+    $player1.attack($player2)
     erb :attack
   end
 
